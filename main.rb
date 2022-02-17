@@ -21,11 +21,11 @@ base = [
 def matriz_to_binary(contenedor_celulas)
   contenedor_celulas.each do |celulas|
     celulas.map! do |celula|
-      celula = if celula == '.'
-                 0
-               else
-                 1
-               end
+      if celula == '.'
+        0
+      else
+        1
+      end
     end
   end
   contenedor_celulas
@@ -84,7 +84,6 @@ if filas <= 10 && filas.positive? && columnas <= 10 && columnas.positive?
   dibujar(contenedor_celulas, filas, columnas)
   puts
   next_gen(contenedor_celulas, base, filas, columnas)
-  puts
   dibujar(base, filas, columnas)
 else
   puts 'Error: El tamaño tiene que ser menor de 2 digitos y mayor a 0 '
